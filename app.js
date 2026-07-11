@@ -9,6 +9,7 @@
   const sourcesEl = document.getElementById('sources');
   const gridInfo = document.getElementById('gridInfo');
   const searchEl = document.getElementById('search');
+  const densityToggle = document.getElementById('densityToggle');
 
   const modal = document.getElementById('modal');
   const modalVideo = document.getElementById('modalVideo');
@@ -210,6 +211,13 @@
   });
 
   searchEl.addEventListener('input', () => { searchTerm = searchEl.value; render(); });
+
+  if (densityToggle) {
+    densityToggle.addEventListener('click', () => {
+      const compact = grid.classList.toggle('compact');
+      densityToggle.classList.toggle('active', compact);
+    });
+  }
 
   buildSources();
   buildTabs();
