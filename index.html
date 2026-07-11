@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Catalog — קטלוג השראה</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">▲</span>
+    <h1 dir="ltr">Prompt Catalog</h1>
+    <span class="brand-sub">קטלוג השראה לווידאו AI</span>
+  </div>
+  <div class="search-wrap">
+    <input id="search" type="search" placeholder="חיפוש לפי שם..." autocomplete="off">
+  </div>
+</header>
+
+<nav class="tabs" id="tabs"></nav>
+<nav class="sources" id="sources"></nav>
+
+<main>
+  <div class="grid-info" id="gridInfo"></div>
+  <section class="grid" id="grid"></section>
+</main>
+
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="סגירה">✕</button>
+    <div class="modal-media">
+      <video id="modalVideo" loop playsinline controls></video>
+    </div>
+    <div class="modal-body">
+      <div class="modal-head">
+        <h2 id="modalTitle" dir="ltr"></h2>
+        <div class="modal-badges" id="modalBadges"></div>
+      </div>
+      <p class="modal-desc" id="modalDesc" dir="ltr"></p>
+      <p class="modal-summary" id="modalSummary"></p>
+
+      <div class="prompt-section">
+        <div class="prompt-toggle">
+          <button class="ptab active" data-mode="simple">פרומפט פשוט</button>
+          <button class="ptab" data-mode="extended">פרומפט מורחב</button>
+        </div>
+        <div class="prompt-box">
+          <pre id="promptText" dir="ltr"></pre>
+          <button class="copy-btn" id="copyBtn">העתקה</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
